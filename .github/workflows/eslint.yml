@@ -1,0 +1,16 @@
+name: Continues integration with nodejs
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Eslint
+        uses: actions/checkout@v2
+      - name: Instalar dependencias
+        run: npm install
+      - name: Ejecutar lint
+        run: npm run eslint
